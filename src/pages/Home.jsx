@@ -1,6 +1,7 @@
 import React from "react";
 import cows from "../assets/cows.jpg";
 import cow from "../assets/cow1.png";
+import kapila from "../assets/kapila.jpg";
 
 const Home = () => {
   return (
@@ -16,7 +17,8 @@ const Home = () => {
                     We <span>Go Nidhi</span> helps to fund various goshalas
                   </h2>
                   <p>
-                    Make a difference today: donate to Go Nidhi and save our gomatha
+                    Make a difference today: donate to Go Nidhi and save our
+                    gomatha
                   </p>
                   <div className="buttons">
                     <a href="#contact" className="btn1">
@@ -38,17 +40,14 @@ const Home = () => {
       <section className="don-sec" id="donation">
         <div className="container">
           <div className="heading">
-            <h2>We Manage Wastage or Donation like..</h2>
+            <h2>Donate to a Goshala</h2>
           </div>
           <div className="row">
             <div className="col-lg-4">
               <div className="don-box">
-                <img src="img/don/clothing.png" alt="img"></img>
-                <h3>Clothes</h3>
-                <p>
-                  Give your clothes a second chance: donate them today and help
-                  make a difference.
-                </p>
+                <img src={kapila} alt="img"></img>
+                <h3>Kapila Park Goshala</h3>
+                <p>Location: Kenjar HC, Karnataka</p>
                 <a href="#contact" className="btn1">
                   Donate Now
                 </a>
@@ -56,12 +55,9 @@ const Home = () => {
             </div>
             <div className="col-lg-4">
               <div className="don-box">
-                <img src="img/don/sneakers.png" alt="img"></img>
-                <h3>Footware</h3>
-                <p>
-                  Step up and make a difference: donate your footwear today and
-                  help those in need.
-                </p>
+                <img src={kapila} alt="img"></img>
+                <h3>Kapila Park Goshala</h3>
+                <p>Location: Kenjar HC, Karnataka</p>
                 <a href="#contact" className="btn1">
                   Donate Now
                 </a>
@@ -69,12 +65,9 @@ const Home = () => {
             </div>
             <div className="col-lg-4">
               <div className="don-box">
-                <img src="img/don/salary.png" alt="img"></img>
-                <h3>Fund</h3>
-                <p>
-                  Your donation can make a world of difference: give today to
-                  support our cause and help those in need.
-                </p>
+                <img src={kapila} alt="img"></img>
+                <h3>Kapila Park Goshala</h3>
+                <p>Location: Kenjar HC, Karnataka</p>
                 <a href="#contact" className="btn1">
                   Donate Now
                 </a>
@@ -82,12 +75,9 @@ const Home = () => {
             </div>
             <div className="col-lg-4">
               <div className="don-box">
-                <img src="img/don/gadgets.png" alt="img"></img>
-                <h3>Gadgets</h3>
-                <p>
-                  Unlock the power of giving: donate your gadgets today and help
-                  bridge the digital divide for those in need.
-                </p>
+                <img src={kapila} alt="img"></img>
+                <h3>Kapila Park Goshala</h3>
+                <p>Location: Kenjar HC, Karnataka</p>
                 <a href="#contact" className="btn1">
                   Donate Now
                 </a>
@@ -95,12 +85,9 @@ const Home = () => {
             </div>
             <div className="col-lg-4">
               <div className="don-box">
-                <img src="img/don/book.png" alt="img"></img>
-                <h3>Stationary</h3>
-                <p>
-                  Make a mark in someone's life: donate your stationery today
-                  and help provide educational resources for those in need.
-                </p>
+                <img src={kapila} alt="img"></img>
+                <h3>Kapila Park Goshala</h3>
+                <p>Location: Kenjar HC, Karnataka</p>
                 <a href="#contact" className="btn1">
                   Donate Now
                 </a>
@@ -108,12 +95,9 @@ const Home = () => {
             </div>
             <div className="col-lg-4">
               <div className="don-box">
-                <img src="img/don/shopping-bag.png" alt="img"></img>
-                <h3>Food</h3>
-                <p>
-                  Feed a hungry mouth today: donate food and help fight hunger
-                  in your community.
-                </p>
+                <img src={kapila} alt="img"></img>
+                <h3>Kapila Park Goshala</h3>
+                <p>Location: Kenjar HC, Karnataka</p>
                 <a href="#contact" className="btn1">
                   Donate Now
                 </a>
@@ -134,21 +118,15 @@ const Home = () => {
                 <h2>What We Do & Why We Do</h2>
               </div>
               <p>
-                At [Welfare Foundation Name], we believe that everyone deserves
-                the chance to live a healthy and fulfilling life. Our mission is
-                to improve the lives of people in need by providing access to
-                basic necessities such as food, shelter, education, and
-                healthcare. We work tirelessly to identify the most pressing
-                needs in our community and develop programs and initiatives to
-                address those needs.{" "}
-              </p>
-              <p>
-                Through our fundraising efforts and the generous support of our
-                donors, we are able to make a positive impact on the lives of
-                thousands of people every year. Whether it's providing a warm
-                meal to someone in need or helping a child receive an education,
-                we are dedicated to making a difference in our community and
-                beyond.
+                At Go Nidhi, we are dedicated to supporting and preserving
+                goshals that are struggling due to a lack of funding. Our
+                mission is to ensure the wellbeing and protection of cows, which
+                are deeply valued in our culture. By providing financial
+                assistance and resources, we aim to sustain these shelters and
+                promote a more humane and compassionate society. Through Gonidi,
+                we strive to create a network of support that empowers goshals
+                to continue their vital work, safeguarding the lives of
+                countless cows.
               </p>
             </div>
           </div>
@@ -161,7 +139,7 @@ const Home = () => {
             <h2>Connect With Us</h2>
             <p>
               Fill this form, our team will collect your <span>Donation</span>{" "}
-              or <span>Wastage</span> from your place.
+              or <span>Other</span> resources from your place.
             </p>
           </div>
           <div className="row">
@@ -187,21 +165,6 @@ const Home = () => {
                               className="form-control"
                               placeholder="Mobile No."
                             />
-                          </div>
-                        </div>
-                        <div className="col-lg-12">
-                          <div className="form-group">
-                            <select name="donation" id="donation">
-                              <option value="">
-                                Choose Donation or Wastage
-                              </option>
-                              <option value="food">Food</option>
-                              <option value="clothes">Clothes</option>
-                              <option value="footware">Footware</option>
-                              <option value="books">Books</option>
-                              <option value="fund">Fund</option>
-                              <option value="gadget">Ele. Gadgets</option>
-                            </select>
                           </div>
                         </div>
                       </div>

@@ -10,15 +10,15 @@ const Footer = () => {
         <div className="row">
           <div className="col-lg-4">
             <div className="col-one">
-              <h4>MAB CORP foundation</h4>
-              <p>Address : 3, Near IT Park, GT Road, Lahore 440000 </p>
+              <h4>Go Nidhi</h4>
+              <p>Address : Mura, Puttur, Dakshina Kannada </p>
               <p>
-                Contact No : <a href="tel: +92 30059****59">+92 30059****59</a>
+                Contact No : <a href="tel: +91 9380770883">+91 9380770883</a>
               </p>
               <p>
                 Email :{" "}
-                <a href="mailto:foundation@mabcorp.com">
-                  foundation@mabcorp.com
+                <a href="mailto:gonidhi@gmail.com">
+                  gonidhi@gmail.com
                 </a>
               </p>
             </div>

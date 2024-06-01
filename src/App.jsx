@@ -14,6 +14,8 @@ const App = () => {
         <PageLayout>
           <Routes>
             <Route path="/" element={<LazyHome />} />
+            <Route path="/goshalas" element={<LazyHome />} />
+            <Route path="/goshalas/:id" element={<LazyHome />} />
           </Routes>
         </PageLayout>
       </ScrollToTop>

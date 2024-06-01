@@ -130,6 +130,10 @@ nav {
   background-color: #e6edff;
 }
 
+.about-sec p {
+  line-height: 1.8;
+  font-size: 1.3rem;
+}
 .about-sec img {
   width: 350px;
   border-radius: 5px;
@@ -143,7 +147,6 @@ nav {
   padding: 150px 0;
 }
 
-
 .don-sec .don-box {
   margin: 50px 0;
   background-color: #fff;
@@ -154,7 +157,7 @@ nav {
 }
 
 .don-sec .don-box img {
-  width: 70px;
+  width: 180px;
   transition: all 1s;
 }
 
@@ -164,10 +167,6 @@ nav {
 
 .don-sec .don-box p {
   margin-bottom: 25px;
-}
-
-.don-sec .don-box:hover img {
-  transform: scale(1.1);
 }
 
 /* Conatact Us */
@@ -268,7 +267,7 @@ footer .social a img {
   .home-sec .img-sec img {
     margin-bottom: 50px;
   }
- 
+
   .contact-sec .col-lg-12 {
     padding: 0;
   }
@@ -278,9 +277,12 @@ footer .social a img {
   }
 }
 @media (max-width: 611px) {
-
   .contact-section .contact-form textarea.form-control {
     width: 94%;
+  }
+
+  .about-sec p {
+    font-size: 1.1rem;
   }
 }
 
