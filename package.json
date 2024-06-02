@@ -15,7 +15,10 @@
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
-    "react-router-dom": "^6.23.1"
+    "react-paginate": "^8.2.0",
+    "react-router-dom": "^6.23.1",
+    "react-uid": "^2.3.3",
+    "uid": "^2.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

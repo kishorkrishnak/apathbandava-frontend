@@ -1,7 +1,7 @@
 import React from "react";
-import cows from "../assets/cows.jpg";
 import cow from "../assets/cow1.png";
-import kapila from "../assets/kapila.jpg";
+import cows from "../assets/cows.jpg";
+import Goshalas from "../components/Goshalas";
 
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
             <div className="row">
               <div className="col-lg-6 align-item-center">
                 <div className="home-info">
-                  <h1>Let's save our goshalas, one step at a time</h1>
+                  <h1>Let&apos;s save our goshalas, one step at a time</h1>
                   <h2>
                     We <span>Go Nidhi</span> helps to fund various goshalas
                   </h2>
@@ -21,7 +21,7 @@ const Home = () => {
                     gomatha
                   </p>
                   <div className="buttons">
-                    <a href="#contact" className="btn1">
+                    <a href="#donation" className="btn1">
                       Donate now
                     </a>
                   </div>
@@ -37,75 +37,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="don-sec" id="donation">
-        <div className="container">
-          <div className="heading">
-            <h2>Donate to a Goshala</h2>
-          </div>
-          <div className="row">
-            <div className="col-lg-4">
-              <div className="don-box">
-                <img src={kapila} alt="img"></img>
-                <h3>Kapila Park Goshala</h3>
-                <p>Location: Kenjar HC, Karnataka</p>
-                <a href="#contact" className="btn1">
-                  Donate Now
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="don-box">
-                <img src={kapila} alt="img"></img>
-                <h3>Kapila Park Goshala</h3>
-                <p>Location: Kenjar HC, Karnataka</p>
-                <a href="#contact" className="btn1">
-                  Donate Now
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="don-box">
-                <img src={kapila} alt="img"></img>
-                <h3>Kapila Park Goshala</h3>
-                <p>Location: Kenjar HC, Karnataka</p>
-                <a href="#contact" className="btn1">
-                  Donate Now
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="don-box">
-                <img src={kapila} alt="img"></img>
-                <h3>Kapila Park Goshala</h3>
-                <p>Location: Kenjar HC, Karnataka</p>
-                <a href="#contact" className="btn1">
-                  Donate Now
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="don-box">
-                <img src={kapila} alt="img"></img>
-                <h3>Kapila Park Goshala</h3>
-                <p>Location: Kenjar HC, Karnataka</p>
-                <a href="#contact" className="btn1">
-                  Donate Now
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="don-box">
-                <img src={kapila} alt="img"></img>
-                <h3>Kapila Park Goshala</h3>
-                <p>Location: Kenjar HC, Karnataka</p>
-                <a href="#contact" className="btn1">
-                  Donate Now
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Goshalas />
 
       <section className="about-sec" id="about">
         <div className="container">
@@ -169,13 +101,6 @@ const Home = () => {
                         </div>
                       </div>
                       <div className="col-lg-6">
-                        <div className="form-group">
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Address"
-                          />
-                        </div>
                         <div className="form-group">
                           <textarea
                             className="form-control"
