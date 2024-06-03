@@ -38,11 +38,7 @@ const Header = () => {
                     Donations
                   </a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#mission-id">
-                    Missions
-                  </a>
-                </li>
+             
                 <li className="nav-item">
                   <a className="nav-link" href="#about">
                     About
@@ -59,7 +55,7 @@ const Header = () => {
         </div>
       </header>
 
-      <div className="cont-sec">
+      {/* <div className="cont-sec">
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
@@ -83,7 +79,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

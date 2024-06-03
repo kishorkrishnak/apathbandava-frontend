@@ -22,23 +22,41 @@
   font-weight: 600;
   color: #303054;
 }
-
+.donsubmit {
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+  align-items: center;
+}
+.qr-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.qr-image {
+  height: 50vh;
+  width: auto;
+}
 .btn1 {
   font-size: 1rem;
   font-weight: 400;
   background-color: #303054;
   color: #fff;
+  outline: none;
+  margin: auto 0;
+  border: none;
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none !important;
   transition: all 0.5s;
 }
+
+
 .btn1:hover {
-  background-color: #e6edff;
-  color: #303054;
+  background-color: #20203b;
 }
 
-/* Header */
 header {
   background-color: #303054;
   width: 100%;
@@ -165,7 +183,6 @@ nav {
 }
 
 .don-sec .don-box p {
-  margin-bottom: 25px;
 }
 
 /* Conatact Us */
@@ -173,11 +190,13 @@ nav {
   padding: 150px 0 80px;
 }
 
-.contact-section .contact-form .form-group {
+.contact-section .contact-form .form-group,
+.donation-form .form-group {
   margin-bottom: 20px;
 }
 
-.contact-section .contact-form .form-control {
+.contact-section .contact-form .form-control,
+.donation-form .form-control {
   height: 50px;
   border-radius: 5px;
 }

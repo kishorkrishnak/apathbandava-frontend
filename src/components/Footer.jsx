@@ -16,10 +16,7 @@ const Footer = () => {
                 Contact No : <a href="tel: +91 9380770883">+91 9380770883</a>
               </p>
               <p>
-                Email :{" "}
-                <a href="mailto:gonidhi@gmail.com">
-                  gonidhi@gmail.com
-                </a>
+                Email : <a href="mailto:gonidhi@gmail.com">gonidhi@gmail.com</a>
               </p>
             </div>
           </div>
@@ -33,9 +30,7 @@ const Footer = () => {
                 <li>
                   <a href="#donation">Donations</a>
                 </li>
-                <li>
-                  <a href="#mission-id">Missions</a>
-                </li>
+             
                 <li>
                   <a href="#about">About us</a>
                 </li>
