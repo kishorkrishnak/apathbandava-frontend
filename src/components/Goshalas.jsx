@@ -18,10 +18,7 @@ const Goshalas = () => {
   const goshalas = [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 14, 144, 1515, 15, 15];
 
   const submitDonorInfoAndShowQr = () => {
-    setTimeout(() => {
-      toast.success("Successfully submitted info");
-      setShowQr(true);
-    }, 2000);
+    setShowQr(true);
   };
   const renderGoshalas = (currentItems) => {
     return currentItems?.map((goshala) => (
@@ -54,7 +51,10 @@ const Goshalas = () => {
               <div className="qr-wrapper mt-3">
                 <img className="qr-image" src={kapilaQr} alt="" />
 
-                <a className="btn1 openupi-btn mt-2" href="upi://pay?pa=9544090119@ybl&pn=Kapila Park Goshala&cu=INR">
+                <a
+                  className="btn1 openupi-btn mt-2"
+                  href="upi://pay?pa=9544090119@ybl&pn=Kapila Park Goshala&cu=INR"
+                >
                   Open UPI App
                 </a>
               </div>
@@ -90,7 +90,7 @@ const Goshalas = () => {
                                 <input
                                   type="text"
                                   className="form-control"
-                                  placeholder="Mobile No."
+                                  placeholder="Amount"
                                 />
                               </div>
                             </div>

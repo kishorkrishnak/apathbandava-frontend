@@ -10,13 +10,13 @@ const Footer = () => {
         <div className="row">
           <div className="col-lg-4">
             <div className="col-one">
-              <h4>Go Nidhi</h4>
-              <p>Address : Mura, Puttur, Dakshina Kannada </p>
+              <h4>Gau Nidhi</h4>
+              <p>Address : Mura, Puttur, Dakshina Kannada, Karnataka, 574220 </p>
               <p>
                 Contact No : <a href="tel: +91 9380770883">+91 9380770883</a>
               </p>
               <p>
-                Email : <a href="mailto:gonidhi@gmail.com">gonidhi@gmail.com</a>
+                Email : <a href="mailto:gaunidhi@gmail.com">gaunidhi@gmail.com</a>
               </p>
             </div>
           </div>

@@ -1,7 +1,3 @@
-import React from "react";
-import facebook from "../assets/facebook.png";
-import gmail from "../assets/gmail.png";
-import instagram from "../assets/instagram.png";
 const Header = () => {
   return (
     <div className="fixed-top">
@@ -9,7 +5,7 @@ const Header = () => {
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-dark">
             <a className="navbar-brand" href="#home">
-              Go Nidhi
+              Gau Nidhi
             </a>
             <button
               className="navbar-toggler"
@@ -38,7 +34,7 @@ const Header = () => {
                     Donations
                   </a>
                 </li>
-             
+
                 <li className="nav-item">
                   <a className="nav-link" href="#about">
                     About

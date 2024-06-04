@@ -14,10 +14,10 @@ const Home = () => {
                 <div className="home-info">
                   <h1>Let&apos;s save our goshalas, one step at a time</h1>
                   <h2>
-                    We <span>Go Nidhi</span> helps to fund various goshalas
+                    We <span>Gau Nidhi</span> helps to fund various goshalas
                   </h2>
                   <p>
-                    Make a difference today: donate to Go Nidhi and save our
+                    Make a difference today: donate to Gau Nidhi and save our
                     gomatha
                   </p>
                   <div className="buttons">
@@ -50,12 +50,12 @@ const Home = () => {
                 <h2>What We Do & Why We Do</h2>
               </div>
               <p>
-                At Go Nidhi, we are dedicated to supporting and preserving
+                At Gau Nidhi, we are dedicated to supporting and preserving
                 goshals that are struggling due to a lack of funding. Our
                 mission is to ensure the wellbeing and protection of cows, which
                 are deeply valued in our culture. By providing financial
                 assistance and resources, we aim to sustain these shelters and
-                promote a more humane and compassionate society. Through Gonidi,
+                promote a more humane and compassionate society. Through Gaunidi,
                 we strive to create a network of support that empowers goshals
                 to continue their vital work, safeguarding the lives of
                 countless cows.
@@ -70,8 +70,8 @@ const Home = () => {
           <div className="heading">
             <h2>Connect With Us</h2>
             <p>
-              Fill this form, our team will collect your <span>Donation</span>{" "}
-              or <span>Other</span> resources from your place.
+              Fill this form, to get in touch with us regarding <span>Donation</span>{" "}
+              or <span>any other queries.</span> 
             </p>
           </div>
           <div className="row">
@@ -99,19 +99,21 @@ const Home = () => {
                             />
                           </div>
                         </div>
-                      </div>
-                      <div className="col-lg-6">
-                        <div className="form-group">
-                          <textarea
-                            className="form-control"
-                            name="text"
-                            id=""
-                            cols="90"
-                            rows="1"
-                            placeholder="Message"
-                          ></textarea>
+
+                        <div className="col-lg-12">
+                          <div className="form-group">
+                            <textarea
+                              className="form-control"
+                              name="text"
+                              id=""
+                              cols="90"
+                              rows="1"
+                              placeholder="Message"
+                            ></textarea>
+                          </div>
                         </div>
                       </div>
+
                       <div className="col-md-12 mt-3">
                         <a href="#" className="btn1 mt-5">
                           Submit Details

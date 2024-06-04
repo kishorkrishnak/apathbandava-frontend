@@ -52,7 +52,6 @@
   transition: all 0.5s;
 }
 
-
 .btn1:hover {
   background-color: #20203b;
 }
@@ -69,7 +68,7 @@ header .navbar-brand {
 }
 
 nav {
-  padding: 8px 0px !important;
+  padding: 15px 0px !important;
 }
 
 .cont-sec {
@@ -217,9 +216,17 @@ footer {
   color: #e6edff;
   padding: 50px 0;
 }
+
 footer h4 {
   margin-bottom: 20px;
 }
+
+footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 footer p a {
   text-decoration: none;
   color: #e6edff;
@@ -289,10 +296,6 @@ footer .social a img {
   .contact-sec .col-lg-12 {
     padding: 0;
   }
-  .contact-form textarea.form-control {
-    width: 96%;
-    margin-left: 15px;
-  }
 }
 @media (max-width: 611px) {
   .contact-section .contact-form textarea.form-control {
@@ -308,4 +311,11 @@ footer .social a img {
   header .navbar-brand {
     font-size: 18px;
   }
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
