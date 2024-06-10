@@ -6,6 +6,7 @@ import { Modal } from "react-responsive-modal";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import kapilaQr from "../assets/kapila-qr.png";
+import SimpleImageSlider from "react-simple-image-slider";
 const Goshalas = () => {
   const [open, setOpen] = useState(false);
   const [showQr, setShowQr] = useState(false);
@@ -20,11 +21,48 @@ const Goshalas = () => {
   const submitDonorInfoAndShowQr = () => {
     setShowQr(true);
   };
+
+  const images = [
+    { url: kapila },
+    { url: kapila },
+    { url: kapila },
+    { url: kapila },
+    { url: kapila },
+    { url: kapila },
+  ];
+
+  const ImageSliderStyle = { width: "100%", height: "100%" };
+
   const renderGoshalas = (currentItems) => {
     return currentItems?.map((goshala) => (
-      <div key={uid(goshala)} className="col-lg-4">
+      <div key={uid(goshala)} className="col-md-6 col-lg-4">
         <div className="don-box">
-          <img src={kapila} alt="img"></img>
+          {/* <img src={kapila} alt="img"></img> */}
+          <div
+            style={{
+              position: "relative",
+              minHeight: 200,
+              objectFit: "cover",
+            }}
+          >
+            <SimpleImageSlider
+              style={{
+                position: "absolute",
+                top: "0",
+                right: "0",
+                bottom: "0",
+              }}
+              width={ImageSliderStyle.width}
+              height={ImageSliderStyle.height}
+              navStyle={2}
+              navSize={35}
+              navMargin={6}
+              autoPlay
+              images={images}
+              showBullets={true}
+              showNavs={true}
+            />
+          </div>
           <h3>Kapila Park Goshala</h3>
           <p>Location: Kenjar HC, Karnataka</p>
           <p>No of cows: 300</p>
