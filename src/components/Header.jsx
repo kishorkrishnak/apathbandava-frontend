@@ -1,10 +1,13 @@
+import logo from '../assets/logo.png'
+
 const Header = () => {
   return (
     <div className="fixed-top">
       <header>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-dark">
-            <a className="navbar-brand" href="#home">
+            <a className="navbar-brand" href="/">
+            <img src={logo} className='logo' alt="" />
               Gau Nidhi
             </a>
             <button
@@ -43,6 +46,12 @@ const Header = () => {
                 <li className="nav-item">
                   <a className="nav-link" href="#contact">
                     Contact
+                  </a>
+                </li>
+
+                <li className="nav-item">
+                  <a className="nav-link" href="/admin">
+                    Admin
                   </a>
                 </li>
               </ul>

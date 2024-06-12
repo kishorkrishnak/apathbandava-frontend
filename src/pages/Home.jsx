@@ -1,7 +1,7 @@
 import React from "react";
 import cow from "../assets/cow1.png";
 import cows from "../assets/cows.jpg";
-import Goshalas from "../components/Goshalas";
+import Gaushalas from "../components/Gaushalas";
 
 const Home = () => {
   return (
@@ -12,13 +12,13 @@ const Home = () => {
             <div className="row">
               <div className="col-lg-6 align-item-center">
                 <div className="home-info">
-                  <h1>Let&apos;s save our goshalas, one step at a time</h1>
+                  <h1>Let&apos;s save our gaushalas, one step at a time</h1>
                   <h2>
-                    We <span>Gau Nidhi</span> helps to fund various goshalas
+                    We <span>Gau Nidhi,</span> helps to fund various gaushalas
                   </h2>
                   <p>
                     Make a difference today: donate to Gau Nidhi and save our
-                    gomatha
+                   gaumatha
                   </p>
                   <div className="buttons">
                     <a href="#donation" className="btn1">
@@ -37,7 +37,7 @@ const Home = () => {
         </div>
       </section>
 
-      <Goshalas />
+      <Gaushalas />
 
       <section className="about-sec" id="about">
         <div className="container">
@@ -75,7 +75,7 @@ const Home = () => {
             </p>
           </div>
           <div className="row">
-            <div className="col-lg-12 mt-5">
+            <div className="col-lg-12 mt-3">
               <form className="contact-form">
                 <div className="row">
                   <div className="col-lg-12">

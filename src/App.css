@@ -7,7 +7,14 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
 }
+.logo {
+  height: 45px;
+  margin-right: 10px;
+}
 
+.logo.footer-logo {
+  height: 35px;
+}
 .heading h2 {
   font-size: 28px;
   font-weight: 500;
@@ -61,7 +68,7 @@ header {
   width: 100%;
 }
 
-header .navbar-brand {
+.navbar-brand {
   font-size: 22px;
   font-weight: 600;
   color: #fff;
@@ -100,7 +107,7 @@ nav {
 }
 
 .home-sec {
-  padding: 80px 0;
+  padding: 40px 0;
 }
 
 .home-sec .home-content {
@@ -190,15 +197,21 @@ nav {
 }
 
 .contact-section .contact-form .form-group,
-.donation-form .form-group {
+.donation-form .form-group,
+.gaushala-form .form-group {
   margin-bottom: 20px;
 }
 
 .contact-section .contact-form .form-control,
-.donation-form .form-control {
+.donation-form .form-control,
+.gaushala-form .form-control {
   height: 50px;
   border-radius: 5px;
 }
+.gaushala-form {
+  padding-top: 100px;
+}
+
 
 .contact-section .contact-form textarea.form-control {
   height: 122px;

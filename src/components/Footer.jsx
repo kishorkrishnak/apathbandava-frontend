@@ -1,7 +1,7 @@
-import React from "react";
 import facebook from "../assets/facebook.png";
 import gmail from "../assets/gmail.png";
 import instagram from "../assets/instagram.png";
+import logo from '../assets/logo.png';
 
 const Footer = () => {
   return (
@@ -10,13 +10,16 @@ const Footer = () => {
         <div className="row">
           <div className="col-lg-4">
             <div className="col-one">
-              <h4>Gau Nidhi</h4>
-              <p>Address : Mura, Puttur, Dakshina Kannada, Karnataka, 574220 </p>
+            <a className="navbar-brand" href="/">
+            <img src={logo} className='logo footer-logo' alt="" />
+              Gau Nidhi
+            </a>
+              <p className="mt-2">Address : Mura, Puttur, Dakshina Kannada, Karnataka, 574220 </p>
               <p>
                 Contact No : <a href="tel: +91 9380770883">+91 9380770883</a>
               </p>
               <p>
-                Email : <a href="mailto:gaunidhi@gmail.com">gaunidhi@gmail.com</a>
+                Email : <a href="mailto:gaunidhi@gmail.com">gaunidhiseva@gmail.com</a>
               </p>
             </div>
           </div>
