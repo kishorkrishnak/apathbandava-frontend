@@ -58,6 +58,9 @@
   text-decoration: none !important;
   transition: all 0.5s;
 }
+.openupi-btn{
+  font-size: 0.9rem;
+}
 
 .btn1:hover {
   background-color: #20203b;
@@ -211,7 +214,11 @@ nav {
 .gaushala-form {
   padding-top: 100px;
 }
-
+.thankyou-text{
+  font-weight: 600;
+  text-align: center;
+  margin: 0 auto;
+}
 
 .contact-section .contact-form textarea.form-control {
   height: 122px;
@@ -238,6 +245,15 @@ footer ul {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+
+.account-details{
+  width: 100%;
+}
+
+.account-details-value{
+  font-weight: 600;
 }
 
 footer p a {
@@ -331,4 +347,7 @@ footer .social a img {
 .navbar-toggler-icon:focus {
   outline: none !important;
   box-shadow: none !important;
+}
+.nav-wrapper{
+  z-index: 10 !important;
 }

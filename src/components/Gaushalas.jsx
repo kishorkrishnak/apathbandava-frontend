@@ -4,9 +4,11 @@ import "react-responsive-modal/styles.css";
 import SimpleImageSlider from "react-simple-image-slider";
 import { uid } from "react-uid";
 import kapilaQr from "../assets/kapila-qr.png";
-import kapila from "../assets/kapila.jpg";
 import Pagination from "./Pagination/Pagination";
 import axios from "axios";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+
 const Gaushalas = () => {
   const [open, setOpen] = useState(false);
   const [showQr, setShowQr] = useState(false);
@@ -29,10 +31,9 @@ const Gaushalas = () => {
     setOpen(false);
   };
   const [gaushalas, setGaushalas] = useState(null);
+
   const fetchGaushalas = async () => {
     const response = await axios.get(`http://localhost:5000/api/gaushalas`);
-    console.log(response.data);
-
     if (response.data.status === "success") {
       setGaushalas(response.data?.data);
     }
@@ -43,6 +44,7 @@ const Gaushalas = () => {
       `http://localhost:5000/api/gaushalas/${gaushalaIdToDonate}/donate`,
       {
         donorName,
+        gaushala: gaushalaIdToDonate,
         phone,
         amount,
         message,
@@ -124,20 +126,101 @@ const Gaushalas = () => {
             <div className="heading">
               <h2>Donate to a Gaushala</h2>
             </div>
-            <Modal open={open} onClose={onCloseModal} center>
-              <h3 className="mt-4">Donate to {gaushalaNameToDonate}</h3>
+
+            <Modal
+              classNames={{
+                modal: "paymentModal",
+              }}
+              open={open}
+              onClose={onCloseModal}
+              center
+            >
+              <h4 className="mt-4">Donate to {gaushalaNameToDonate}</h4>
 
               {showQr ? (
-                <div className="qr-wrapper mt-3">
-                  <img className="qr-image" src={kapilaQr} alt="" />
+                <>
+                  <Tabs>
+                    <TabList>
+                      <Tab>UPI</Tab>
+                      <Tab>Bank Transfer</Tab>
+                    </TabList>
 
-                  <a
-                    className="btn1 openupi-btn mt-2"
-                    href="upi://pay?pa=9544090119@ybl&pn=Kapila Park Goshala&cu=INR"
-                  >
-                    Open UPI App
-                  </a>
-                </div>
+                    <TabPanel>
+                      <div className="qr-wrapper mt-3">
+                        <img className="qr-image" src={kapilaQr} alt="qr" />
+
+                        <a
+                          className="btn1 openupi-btn mt-2"
+                          href="upi://pay?pa=9544090119@ybl&pn=Kapila Park Goshala&cu=INR"
+                        >
+                          Open UPI App
+                        </a>
+
+                        <p className="thankyou-text mt-3">
+                          Thank you for your donation! ❤️
+                        </p>
+                      </div>
+                    </TabPanel>
+                    <TabPanel>
+                      <div className=" mt-3">
+                        <p>Transfer directly to the following bank</p>
+
+                        <div className="account-details d-flex flex-column align-items-start">
+                          <ul>
+                            <li>
+                              <p>
+                                Account Holder:{" "}
+                                <span className="account-details-value">
+                                  Kishor Krishna
+                                </span>{" "}
+                              </p>
+                            </li>
+                            <li>
+                              <p>
+                                Bank Name:{" "}
+                                <span className="account-details-value">
+                                  Bank Of Baroda
+                                </span>{" "}
+                              </p>
+                            </li>
+
+                            <li>
+                              <p>
+                                Bank Branch:{" "}
+                                <span className="account-details-value">
+                                  Puttur
+                                </span>{" "}
+                              </p>
+                            </li>
+
+                            <li>
+                              <p>
+                                Account No:{" "}
+                                <span className="account-details-value">
+                                123456789
+                                </span>{" "}
+                              </p>
+                            </li>
+                            <li>
+                              <p>
+                                IFSC Code:{" "}
+                                <span className="account-details-value">
+                              IFSC1234
+                                </span>{" "}
+                              </p>
+                            </li>
+                          </ul>
+                          <p className="thankyou-text">
+                          Thank you for your donation! ❤️
+                        </p>
+                        </div>
+
+
+                        
+                      </div>
+                    </TabPanel>
+                  </Tabs>
+                </>
               ) : (
                 <div className="container donation-form mt-4">
                   <div className="row">

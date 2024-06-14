@@ -2,7 +2,7 @@ import logo from '../assets/logo.png'
 
 const Header = () => {
   return (
-    <div className="fixed-top">
+    <div className="fixed-top nav-wrapper">
       <header>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-dark">
@@ -49,11 +49,7 @@ const Header = () => {
                   </a>
                 </li>
 
-                <li className="nav-item">
-                  <a className="nav-link" href="/admin">
-                    Admin
-                  </a>
-                </li>
+           
               </ul>
             </div>
           </nav>
