@@ -67,7 +67,19 @@ const Footer = () => {
                   <img src={gmail} alt="gmail"></img>
                 </a>
               </div>
-              <p>Copyright &copy; 2024 | All Right Reserved</p>
+              <p>Copyright &copy; 2024. All Right Reserved</p>
+              <div>
+                <p>
+                  Developed By{" "}
+                  <a
+                    className="dev-name"
+                    href="https://github.com/kishorkrishnak"
+                  >
+                    Kishor Krishna
+                  </a>
+                </p>
+                <p>Phone - 9544090119</p>
+              </div>
             </div>
           </div>
         </div>

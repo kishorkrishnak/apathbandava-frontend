@@ -33,7 +33,7 @@ const Gaushalas = () => {
   const [gaushalas, setGaushalas] = useState(null);
 
   const fetchGaushalas = async () => {
-    const response = await axios.get(`http://localhost:5000/api/gaushalas`);
+    const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/gaushalas`);
     if (response.data.status === "success") {
       setGaushalas(response.data?.data);
     }
@@ -41,7 +41,7 @@ const Gaushalas = () => {
 
   const submitDonorInfoAndShowQr = async () => {
     const response = await axios.post(
-      `http://localhost:5000/api/gaushalas/${gaushalaIdToDonate}/donate`,
+      `${import.meta.env.VITE_BACKEND_URL}/api/gaushalas/${gaushalaIdToDonate}/donate`,
       {
         donorName,
         gaushala: gaushalaIdToDonate,
