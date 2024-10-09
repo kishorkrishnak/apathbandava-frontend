@@ -1,15 +1,15 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import SimpleImageSlider from "react-simple-image-slider";
+import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 import { uid } from "react-uid";
 import kapilaQr from "../assets/kapila-qr.png";
 import Pagination from "./Pagination/Pagination";
-import axios from "axios";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
 
-const Gaushalas = () => {
+const Patients = () => {
   const [open, setOpen] = useState(false);
   const [showQr, setShowQr] = useState(false);
   const [donorName, setDonorName] = useState("");
@@ -17,12 +17,12 @@ const Gaushalas = () => {
   const [amount, setAmount] = useState("");
   const [message, setMessage] = useState("");
 
-  const [gaushalaIdToDonate, setGaushalaIdToDonate] = useState(null);
-  const [gaushalaNameToDonate, setGaushalaNameToDonate] = useState("");
+  const [patientIdToDonate, setPatientIdToDonate] = useState(null);
+  const [patientNameToDonate, setPatientNameToDonate] = useState("");
 
-  const onOpenModal = (gaushalaName, gaushalaId) => {
-    setGaushalaIdToDonate(gaushalaId);
-    setGaushalaNameToDonate(gaushalaName);
+  const onOpenModal = (patientName, patientId) => {
+    setPatientIdToDonate(patientId);
+    setPatientNameToDonate(patientName);
     setOpen(true);
   };
 
@@ -30,21 +30,25 @@ const Gaushalas = () => {
     setShowQr(false);
     setOpen(false);
   };
-  const [gaushalas, setGaushalas] = useState(null);
+  const [patients, setPatients] = useState(null);
 
-  const fetchGaushalas = async () => {
-    const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/gaushalas`);
+  const fetchPatients = async () => {
+    const response = await axios.get(
+      `${import.meta.env.VITE_BACKEND_URL}/api/patients`
+    );
     if (response.data.status === "success") {
-      setGaushalas(response.data?.data);
+      setPatients(response.data?.data);
     }
   };
 
   const submitDonorInfoAndShowQr = async () => {
     const response = await axios.post(
-      `${import.meta.env.VITE_BACKEND_URL}/api/gaushalas/${gaushalaIdToDonate}/donate`,
+      `${
+        import.meta.env.VITE_BACKEND_URL
+      }/api/patients/${patientIdToDonate}/donate`,
       {
-        donorName,
-        gaushala: gaushalaIdToDonate,
+        name:donorName,
+        patient: patientIdToDonate,
         phone,
         amount,
         message,
@@ -57,14 +61,14 @@ const Gaushalas = () => {
   };
 
   useEffect(() => {
-    fetchGaushalas();
+    fetchPatients();
   }, []);
 
   const ImageSliderStyle = { width: "100%", height: "100%" };
 
-  const renderGaushalas = (currentItems) => {
-    return currentItems?.map((gaushala) => {
-      const images = gaushala.thumbnailImages.map((image) => {
+  const renderPatients = (currentItems) => {
+    return currentItems?.map((patient) => {
+      const images = patient.thumbnailImages.map((image) => {
         return {
           url: image,
         };
@@ -72,7 +76,7 @@ const Gaushalas = () => {
 
       console.log(images);
       return (
-        <div key={uid(gaushala)} className="col-md-6 col-lg-4">
+        <div key={uid(patient)} className="col-md-6 col-lg-4">
           <div className="don-box">
             <div
               style={{
@@ -100,13 +104,15 @@ const Gaushalas = () => {
                 showNavs={true}
               />
             </div>
-            <h3>{gaushala.name}</h3>
-            <p>Location: {gaushala.location}</p>
-            <p>No of cows: {gaushala.noOfCows}</p>
+            <h3>{patient.name}</h3>
+            <p>Condition: {patient.disease}</p>
+            <p>{patient.description}</p>
+            <p>Amount Required: {patient.amountRequired}</p>
+            <p>Amount Raised: {patient.amountRaised}</p>
 
             <button
               onClick={() => {
-                onOpenModal(gaushala.name, gaushala._id);
+                onOpenModal(patient.name, patient._id);
               }}
               className="btn1"
             >
@@ -120,11 +126,11 @@ const Gaushalas = () => {
 
   return (
     <>
-      {gaushalas && gaushalas.length > 0 && (
+      {patients && patients.length > 0 && (
         <section className="don-sec" id="donation">
           <div className="container flex">
             <div className="heading">
-              <h2>Donate to a Gaushala</h2>
+              <h2>Donate to a Patient</h2>
             </div>
 
             <Modal
@@ -135,7 +141,7 @@ const Gaushalas = () => {
               onClose={onCloseModal}
               center
             >
-              <h4 className="mt-4">Donate to {gaushalaNameToDonate}</h4>
+              <h4 className="mt-4">Donate to {patientNameToDonate}</h4>
 
               {showQr ? (
                 <>
@@ -197,7 +203,7 @@ const Gaushalas = () => {
                               <p>
                                 Account No:{" "}
                                 <span className="account-details-value">
-                                123456789
+                                  123456789
                                 </span>{" "}
                               </p>
                             </li>
@@ -205,18 +211,15 @@ const Gaushalas = () => {
                               <p>
                                 IFSC Code:{" "}
                                 <span className="account-details-value">
-                              IFSC1234
+                                  IFSC1234
                                 </span>{" "}
                               </p>
                             </li>
                           </ul>
                           <p className="thankyou-text">
-                          Thank you for your donation! ❤️
-                        </p>
+                            Thank you for your donation! ❤️
+                          </p>
                         </div>
-
-
-                        
                       </div>
                     </TabPanel>
                   </Tabs>
@@ -294,9 +297,9 @@ const Gaushalas = () => {
             </Modal>
             <div className="row">
               <Pagination
-                items={gaushalas}
+                items={patients}
                 itemsPerPage={6}
-                renderItems={renderGaushalas}
+                renderItems={renderPatients}
               />
             </div>
           </div>
@@ -306,4 +309,4 @@ const Gaushalas = () => {
   );
 };
 
-export default Gaushalas;
+export default Patients;

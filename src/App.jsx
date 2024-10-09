@@ -1,9 +1,9 @@
 import React from "react";
 import { Toaster } from "react-hot-toast";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import ScrollToTop from "./components/ScrollToTop";
 import PageLayout from "./components/PageLayout";
+import ScrollToTop from "./components/ScrollToTop";
 
 const LazyHome = React.lazy(() => import("./pages/Home"));
 
@@ -16,7 +16,7 @@ const App = () => {
         <PageLayout>
           <Routes>
             <Route path="/" element={<LazyHome />} />
-            <Route path="/goshalas" element={<LazyHome />} />
+            <Route path="/patients" element={<LazyHome />} />
           </Routes>
         </PageLayout>
       </ScrollToTop>

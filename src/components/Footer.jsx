@@ -13,7 +13,7 @@ const Footer = () => {
             <div className="col-one">
               <a className="navbar-brand" href="/">
                 <img src={logo} className="logo footer-logo" alt="" />
-                Gau Nidhi
+                AapatBandhava
               </a>
               <p className="mt-2">
                 Address : Mura, Puttur, Dakshina Kannada, Karnataka, 574220{" "}
@@ -23,8 +23,8 @@ const Footer = () => {
               </p>
               <p>
                 Email :{" "}
-                <a href="mailto:gaunidhiseva@gmail.com">
-                  gaunidhiseva@gmail.com
+                <a href="mailto:aapatbandhava@gmail.com">
+                aapatbandhava@gmail.com
                 </a>
               </p>
             </div>
@@ -34,7 +34,7 @@ const Footer = () => {
               <h4>Important Links</h4>
               <ul>
                 <li>
-                  <a href="#home">Home</a>
+                  <a href="/">Home</a>
                 </li>
                 <li>
                   <a href="#donation">Donations</a>
@@ -63,7 +63,7 @@ const Footer = () => {
                 <a href="#">
                   <img src={youtube} alt="youtube"></img>
                 </a>
-                <a href="mailto:gaunidhi@gmail.com">
+                <a href="mailto:aapatbandhava@gmail.com">
                   <img src={gmail} alt="gmail"></img>
                 </a>
               </div>

@@ -1,7 +1,6 @@
-import React from "react";
-import cow from "../assets/cow1.png";
-import cows from "../assets/cows.jpg";
-import Gaushalas from "../components/Gaushalas";
+import cow from "../assets/help-2.png";
+import help from "../assets/help.jpg";
+import Patients from "../components/Patients";
 
 const Home = () => {
   return (
@@ -12,13 +11,16 @@ const Home = () => {
             <div className="row">
               <div className="col-lg-6 align-item-center">
                 <div className="home-info">
-                  <h1>Let&apos;s save our gaushalas, one step at a time</h1>
+                  <h1>
+                    Let&apos;s save our brothers and sisters, one person at a
+                    time
+                  </h1>
                   <h2>
-                    We <span>Gau Nidhi,</span> helps to fund various gaushalas
+                    <span>AaapatBandhava</span> helps to fund patients going
+                    through various diseases
                   </h2>
                   <p>
-                    Make a difference today: donate to Gau Nidhi and save our
-                   gaumatha
+                    Make a difference today: donate to people and save a life
                   </p>
                   <div className="buttons">
                     <a href="#donation" className="btn1">
@@ -29,7 +31,7 @@ const Home = () => {
               </div>
               <div className="col-lg-6 order-first order-lg-last">
                 <div className="img-sec">
-                  <img src={cows} alt="home-image"></img>
+                  <img src={help} alt="home-image"></img>
                 </div>
               </div>
             </div>
@@ -37,7 +39,7 @@ const Home = () => {
         </div>
       </section>
 
-      <Gaushalas />
+      <Patients />
 
       <section className="about-sec" id="about">
         <div className="container">
@@ -50,15 +52,16 @@ const Home = () => {
                 <h2>What We Do & Why We Do</h2>
               </div>
               <p>
-                At Gau Nidhi, we are dedicated to supporting and preserving
-                goshals that are struggling due to a lack of funding. Our
-                mission is to ensure the wellbeing and protection of cows, which
-                are deeply valued in our culture. By providing financial
-                assistance and resources, we aim to sustain these shelters and
-                promote a more humane and compassionate society. Through Gaunidi,
-                we strive to create a network of support that empowers goshals
-                to continue their vital work, safeguarding the lives of
-                countless cows.
+                At AapatBandhava, our mission is to provide critical support to
+                individuals facing severe health challenges but struggling due
+                to financial constraints. We are committed to ensuring that no
+                one is denied life-saving medical care due to a lack of funds.
+                By fostering a compassionate community and offering a platform
+                for crowdfunding, AapatBandhava connects patients in urgent need
+                with generous donors who can help make a difference. Together,
+                we can alleviate the financial burden of medical expenses and
+                ensure that every patient receives the care they deserve,
+                fostering hope and saving lives one contribution at a time.
               </p>
             </div>
           </div>
@@ -68,15 +71,19 @@ const Home = () => {
       <section className="contact-section" id="contact">
         <div className="container">
           <div className="heading">
-            <h2>Connect With Us</h2>
+            <h2>Request a Call Back</h2>
             <p>
-              Fill this form, to get in touch with us regarding <span>Donation</span>{" "}
-              or <span>any other queries.</span> 
+              Fill this form, to get in touch with us regarding{" "}
+              <span>Donation</span> or <span>any other queries.</span>
             </p>
           </div>
+         
           <div className="row">
+            
             <div className="col-lg-12 mt-3">
+              
               <form className="contact-form">
+                
                 <div className="row">
                   <div className="col-lg-12">
                     <div className="row">
@@ -99,6 +106,15 @@ const Home = () => {
                             />
                           </div>
                         </div>
+                        <div className="col-lg-12">
+                          <div className="form-group">
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="Estimated Amount ₹ Required (Rupees)"
+                            />
+                          </div>
+                        </div>
 
                         <div className="col-lg-12">
                           <div className="form-group">
@@ -108,7 +124,7 @@ const Home = () => {
                               id=""
                               cols="90"
                               rows="1"
-                              placeholder="Message"
+                              placeholder="Why do you need fund?"
                             ></textarea>
                           </div>
                         </div>
@@ -125,6 +141,7 @@ const Home = () => {
               </form>
             </div>
           </div>
+          
         </div>
       </section>
     </>

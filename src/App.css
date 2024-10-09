@@ -201,17 +201,17 @@ nav {
 
 .contact-section .contact-form .form-group,
 .donation-form .form-group,
-.gaushala-form .form-group {
+.patient-form .form-group {
   margin-bottom: 20px;
 }
 
 .contact-section .contact-form .form-control,
 .donation-form .form-control,
-.gaushala-form .form-control {
+.patient-form .form-control {
   height: 50px;
   border-radius: 5px;
 }
-.gaushala-form {
+.patient-form {
   padding-top: 100px;
 }
 .thankyou-text {

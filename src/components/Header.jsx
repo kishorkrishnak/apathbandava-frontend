@@ -1,4 +1,4 @@
-import logo from '../assets/logo.png'
+import logo from "../assets/logo.png";
 
 const Header = () => {
   return (
@@ -7,8 +7,8 @@ const Header = () => {
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-dark">
             <a className="navbar-brand" href="/">
-            <img src={logo} className='logo' alt="" />
-              Gau Nidhi
+              <img src={logo} className="logo" alt="" />
+           AaapatBandhava
             </a>
             <button
               className="navbar-toggler"
@@ -28,7 +28,7 @@ const Header = () => {
             >
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item active">
-                  <a className="nav-link" href="#home">
+                  <a className="nav-link" href="/">
                     Home <span className="sr-only">(current)</span>
                   </a>
                 </li>
@@ -48,39 +48,11 @@ const Header = () => {
                     Contact
                   </a>
                 </li>
-
-           
               </ul>
             </div>
           </nav>
         </div>
       </header>
-
-      {/* <div className="cont-sec">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6">
-              <p>
-                Contact No : <a href="tel: +9230059****59">+91 9380770883</a>
-              </p>
-            </div>
-            <div className="col-lg-6">
-              <div className="social">
-              <a href="#">
-                  <img src={facebook} alt="facebook"></img>
-                </a>
-                <a href="#">
-                  <img src={instagram} alt="inatagram"></img>
-                </a>
-
-                <a href="#">
-                  <img src={gmail} alt="gmail"></img>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };
