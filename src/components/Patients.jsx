@@ -6,8 +6,8 @@ import SimpleImageSlider from "react-simple-image-slider";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { uid } from "react-uid";
+import bank from "../assets/bank.jpg";
 import kapilaQr from "../assets/kapila-qr.png";
-import Pagination from "./Pagination/Pagination";
 
 const Patients = () => {
   const [open, setOpen] = useState(false);
@@ -16,9 +16,10 @@ const Patients = () => {
   const [phone, setPhone] = useState("");
   const [amount, setAmount] = useState("");
   const [message, setMessage] = useState("");
-
   const [patientIdToDonate, setPatientIdToDonate] = useState(null);
   const [patientNameToDonate, setPatientNameToDonate] = useState("");
+  const [patients, setPatients] = useState([]);
+  const [displayCount, setDisplayCount] = useState(3); // State to track number of patients to display
 
   const onOpenModal = (patientName, patientId) => {
     setPatientIdToDonate(patientId);
@@ -30,14 +31,13 @@ const Patients = () => {
     setShowQr(false);
     setOpen(false);
   };
-  const [patients, setPatients] = useState(null);
 
   const fetchPatients = async () => {
     const response = await axios.get(
       `${import.meta.env.VITE_BACKEND_URL}/api/patients`
     );
     if (response.data.status === "success") {
-      setPatients(response.data?.data);
+      setPatients(response.data.data);
     }
   };
 
@@ -47,7 +47,7 @@ const Patients = () => {
         import.meta.env.VITE_BACKEND_URL
       }/api/patients/${patientIdToDonate}/donate`,
       {
-        name:donorName,
+        name: donorName,
         patient: patientIdToDonate,
         phone,
         amount,
@@ -66,15 +66,17 @@ const Patients = () => {
 
   const ImageSliderStyle = { width: "100%", height: "100%" };
 
-  const renderPatients = (currentItems) => {
-    return currentItems?.map((patient) => {
+  const renderPatients = () => {
+    return patients.slice(0, displayCount).map((patient) => {
       const images = patient.thumbnailImages.map((image) => {
         return {
           url: image,
         };
       });
-
-      console.log(images);
+      const progressPercentage = Math.min(
+        (patient.amountRaised / patient.amountRequired) * 100,
+        100
+      );
       return (
         <div key={uid(patient)} className="col-md-6 col-lg-4">
           <div className="don-box">
@@ -104,17 +106,25 @@ const Patients = () => {
                 showNavs={true}
               />
             </div>
-            <h3>{patient.name}</h3>
+            <h4>{patient.name}</h4>
             <p>Condition: {patient.disease}</p>
             <p>{patient.description}</p>
-            <p>Amount Required: {patient.amountRequired}</p>
-            <p>Amount Raised: {patient.amountRaised}</p>
+            <p>
+              <span className="raised">₹{patient.amountRaised}</span> Raised out
+              of ₹{patient.amountRequired}
+            </p>
 
+            <div className="progress-bar-container">
+              <div
+                className="progress-bar"
+                style={{ width: `${progressPercentage}%` }}
+              />
+            </div>
             <button
               onClick={() => {
                 onOpenModal(patient.name, patient._id);
               }}
-              className="btn1"
+              className="btn1 mt-2"
             >
               Donate Now
             </button>
@@ -124,13 +134,17 @@ const Patients = () => {
     });
   };
 
+  const loadMorePatients = () => {
+    setDisplayCount((prevCount) => prevCount + 3); // Load 3 more patients
+  };
+
   return (
     <>
-      {patients && patients.length > 0 && (
+      {patients.length > 0 && (
         <section className="don-sec" id="donation">
           <div className="container flex">
             <div className="heading">
-              <h2>Donate to a Patient</h2>
+              <h1 className="leftbar">Active Fundraisers</h1>
             </div>
 
             <Modal
@@ -169,6 +183,7 @@ const Patients = () => {
                     </TabPanel>
                     <TabPanel>
                       <div className=" mt-3">
+                        <img height={50} className="mb-2" src={bank} alt="bank" />
                         <p>Transfer directly to the following bank</p>
 
                         <div className="account-details d-flex flex-column align-items-start">
@@ -230,63 +245,46 @@ const Patients = () => {
                     <div className="contact-form">
                       <div className="row">
                         <div className="col-lg-12">
-                          <div className="row">
-                            <div className="col-lg-12">
-                              <div className="col-lg-12">
-                                <div className="form-group">
-                                  <input
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="Your Name"
-                                    onChange={(e) =>
-                                      setDonorName(e.target.value)
-                                    }
-                                  />
-                                </div>
-                              </div>
-                              <div className="col-lg-12">
-                                <div className="form-group">
-                                  <input
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="Mobile No."
-                                    onChange={(e) => setPhone(e.target.value)}
-                                  />
-                                </div>
-                              </div>
-
-                              <div className="col-lg-12">
-                                <div className="form-group">
-                                  <input
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="Amount"
-                                    onChange={(e) => setAmount(e.target.value)}
-                                  />
-                                </div>
-                              </div>
-
-                              <div className="col-lg-12">
-                                <div className="form-group">
-                                  <textarea
-                                    className="form-control"
-                                    rows="6"
-                                    placeholder="Message (Optional)"
-                                    onChange={(e) => setMessage(e.target.value)}
-                                  ></textarea>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div className="donsubmit col-md-12 mt-3">
-                              <button
-                                onClick={submitDonorInfoAndShowQr}
-                                className="btn1"
-                                type="button"
-                              >
-                                Submit
-                              </button>
-                            </div>
+                          <div className="form-group">
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="Your Name"
+                              onChange={(e) => setDonorName(e.target.value)}
+                            />
+                          </div>
+                          <div className="form-group">
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="Mobile No."
+                              onChange={(e) => setPhone(e.target.value)}
+                            />
+                          </div>
+                          <div className="form-group">
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="Amount"
+                              onChange={(e) => setAmount(e.target.value)}
+                            />
+                          </div>
+                          <div className="form-group">
+                            <textarea
+                              className="form-control"
+                              rows="6"
+                              placeholder="Message (Optional)"
+                              onChange={(e) => setMessage(e.target.value)}
+                            ></textarea>
+                          </div>
+                          <div className="donsubmit mt-3">
+                            <button
+                              onClick={submitDonorInfoAndShowQr}
+                              className="btn1"
+                              type="button"
+                            >
+                              Submit
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -295,13 +293,17 @@ const Patients = () => {
                 </div>
               )}
             </Modal>
-            <div className="row">
-              <Pagination
-                items={patients}
-                itemsPerPage={6}
-                renderItems={renderPatients}
-              />
-            </div>
+
+            <div className="row">{renderPatients()}</div>
+
+            {displayCount < patients.length && (
+              <p
+                className="text-center col-md-12 loadmore-btn mt-5"
+                onClick={loadMorePatients}
+              >
+                Load More
+              </p>
+            )}
           </div>
         </section>
       )}

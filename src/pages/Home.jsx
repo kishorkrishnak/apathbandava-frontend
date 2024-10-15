@@ -1,6 +1,5 @@
 import cow from "../assets/help-2.png";
 import help from "../assets/help.jpg";
-import wp from "../assets/wp.svg";
 import Patients from "../components/Patients";
 import WhatsappChat from "../components/WhatsappChat";
 
@@ -11,37 +10,48 @@ const Home = () => {
         <div className="container">
           <div className="home-content">
             <div className="row">
-              <div className="col-lg-6 align-item-center">
+              {/* Text Section */}
+              <div className="col-lg-6 text-content">
                 <div className="home-info">
                   <h1>
-                    Let&apos;s save our brothers and sisters, one person at a
+                    Let&apos;s save our brothers and sisters, one contribution at a
                     time
                   </h1>
-                  <h2>
-                    <span>AapatBandhava</span> helps to fund people going
-                    through various health conditions
-                  </h2>
+
                   <p>
                     Make a difference today: donate to people and save a life
                   </p>
+
+                  {/* Metrics Section */}
+                  <div className="metrics">
+                    <div className="metric-item">
+                      <h3>0%</h3>
+                      <p>Platform Fees</p>
+                    </div>
+                    <div className="metric-item">
+                      <h3>24/7</h3>
+                      <p>Support</p>
+                    </div>
+                    <div className="metric-item">
+                      <h3>100%</h3>
+                      <p>Impact</p>
+                    </div>
+                  </div>
+
+                  {/* Button */}
                   <div className="buttons">
-                    <a href="#donation" className="btn1">
+                    <a href="#donation" className="btn1 py-3 px-4">
                       Donate now
                     </a>
                   </div>
                 </div>
               </div>
-              <div className="col-lg-6 order-first order-lg-last">
-                <div className="img-sec">
-                  <img src={help} alt="home-image"></img>
-                </div>
-              </div>
+
+           
             </div>
           </div>
         </div>
       </section>
-
-      <Patients />
 
       <section className="about-sec" id="about">
         <div className="container">
@@ -51,15 +61,15 @@ const Home = () => {
             </div>
             <div className="col-lg-8 order-first order-lg-last">
               <div className="heading">
-                <h2>What We Do & Why We Do</h2>
+                <h1 className="leftbar">What We Do & Why We Do</h1>
               </div>
               <p>
-                At AapatBandhava, our mission is to provide critical support to
+                At ApatBandava, our mission is to provide critical support to
                 individuals facing severe health challenges but struggling due
                 to financial constraints. We are committed to ensuring that no
                 one is denied life-saving medical care due to a lack of funds.
                 By fostering a compassionate community and offering a platform
-                for crowdfunding, AapatBandhava connects patients in urgent need
+                for crowdfunding, ApatBandava connects patients in urgent need
                 with generous donors who can help make a difference. Together,
                 we can alleviate the financial burden of medical expenses and
                 ensure that every patient receives the care they deserve,
@@ -70,10 +80,104 @@ const Home = () => {
         </div>
       </section>
 
+      <Patients />
+
+      <section className="offer-section" id="offer">
+        <div className="container">
+          <div className="heading text-center mb-5">
+            <h1>What We Offer?</h1>
+          </div>
+
+          <div className="row">
+            {/* Card 1 */}
+            <div className="col-lg-4 col-md-6 mb-4">
+              <div className="offer-card">
+                <div className="icon">
+                  <i className="fas fa-check-circle"></i>{" "}
+                  {/* Font Awesome icon */}
+                </div>
+                <h3>Free Fundraiser Setup</h3>
+                <p>Starting a fundraiser on Ketto is absolutely free.</p>
+              </div>
+            </div>
+            {/* Card 2 */}
+            <div className="col-lg-4 col-md-6 mb-4">
+              <div className="offer-card">
+                <div className="icon">
+                  <i className="fas fa-check-circle"></i>{" "}
+                  {/* Font Awesome icon */}
+                </div>
+                <h3>24x7 Assistance</h3>
+                <p>
+                  24x7 assistance from dedicated fundraiser managers throughout
+                  your fundraising journey.
+                </p>
+              </div>
+            </div>
+            {/* Card 3 */}
+            <div className="col-lg-4 col-md-6 mb-4">
+              <div className="offer-card">
+                <div className="icon">
+                  <i className="fas fa-check-circle"></i>{" "}
+                  {/* Font Awesome icon */}
+                </div>
+                <h3>Global Donations</h3>
+                <p>
+                  We accept donations in multiple currencies from anywhere in
+                  the world.
+                </p>
+              </div>
+            </div>
+            {/* Card 4 */}
+            <div className="col-lg-4 col-md-6 mb-4">
+              <div className="offer-card">
+                <div className="icon">
+                  <i className="fas fa-check-circle"></i>{" "}
+                  {/* Font Awesome icon */}
+                </div>
+                <h3>Easy Fund Withdrawal</h3>
+                <p>
+                  You can withdraw your funds at any point during the course of
+                  your fundraiser.
+                </p>
+              </div>
+            </div>
+            {/* Card 5 */}
+            <div className="col-lg-4 col-md-6 mb-4">
+              <div className="offer-card">
+                <div className="icon">
+                  <i className="fas fa-check-circle"></i>{" "}
+                  {/* Font Awesome icon */}
+                </div>
+                <h3>Real-Time Dashboard</h3>
+                <p>
+                  Get instant updates on your fundraiser&apos;s progress on a
+                  real-time dashboard.
+                </p>
+              </div>
+            </div>
+            {/* Card 6 */}
+            <div className="col-lg-4 col-md-6 mb-4">
+              <div className="offer-card">
+                <div className="icon">
+                  <i className="fas fa-check-circle"></i>{" "}
+                  {/* Font Awesome icon */}
+                </div>
+                <h3>Multiple Payment Options</h3>
+                <p>
+                  Accepts donations from all cards, net banking, UPI, and online
+                  wallets.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="contact-section" id="contact">
         <div className="container">
           <div className="heading">
-            <h2>Request a Call Back</h2>
+            <h1>Request a Call Back</h1>
             <p>
               Fill this form, to get in touch with us regarding{" "}
               <span>Donation</span> or <span>any other queries.</span>
@@ -140,8 +244,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <WhatsappChat/>
-
+        <WhatsappChat />
       </section>
     </>
   );

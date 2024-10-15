@@ -5,10 +5,10 @@ const Header = () => {
     <div className="nav-wrapper">
       <header>
         <div className="container">
-          <nav className="navbar navbar-expand-lg navbar-dark">
+          <nav className="navbar navbar-expand-lg navbar-light">
             <a className="navbar-brand" href="/">
               <img src={logo} className="logo" alt="" />
-              AapatBandhava
+              ApatBandava
             </a>
             <button
               className="navbar-toggler"
