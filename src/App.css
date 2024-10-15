@@ -358,3 +358,22 @@ footer .social a img {
 .dev-name {
   color: skyblue;
 }
+
+.whatsapp-chat {
+  position: fixed;
+  background: rgb(3, 150, 3);
+  border-radius: 10000px;
+  padding: 0.8rem;
+  bottom: 125px;
+  right: 25px;
+}
+
+
+.whatsapp-chat:hover {
+  background: rgb(1, 72, 1);
+}
+
+.whatsapp-chat img {
+  height: 30px;
+  width: 30px;
+}

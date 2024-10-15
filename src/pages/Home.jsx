@@ -1,6 +1,8 @@
 import cow from "../assets/help-2.png";
 import help from "../assets/help.jpg";
+import wp from "../assets/wp.svg";
 import Patients from "../components/Patients";
+import WhatsappChat from "../components/WhatsappChat";
 
 const Home = () => {
   return (
@@ -16,8 +18,8 @@ const Home = () => {
                     time
                   </h1>
                   <h2>
-                    <span>AaapatBandhava</span> helps to fund patients going
-                    through various diseases
+                    <span>AapatBandhava</span> helps to fund people going
+                    through various health conditions
                   </h2>
                   <p>
                     Make a difference today: donate to people and save a life
@@ -77,13 +79,10 @@ const Home = () => {
               <span>Donation</span> or <span>any other queries.</span>
             </p>
           </div>
-         
+
           <div className="row">
-            
             <div className="col-lg-12 mt-3">
-              
               <form className="contact-form">
-                
                 <div className="row">
                   <div className="col-lg-12">
                     <div className="row">
@@ -122,9 +121,8 @@ const Home = () => {
                               className="form-control"
                               name="text"
                               id=""
-                              cols="90"
                               rows="1"
-                              placeholder="Why do you need fund?"
+                              placeholder="Why do you need the fund?"
                             ></textarea>
                           </div>
                         </div>
@@ -132,7 +130,7 @@ const Home = () => {
 
                       <div className="col-md-12 mt-3">
                         <a href="#" className="btn1 mt-5">
-                          Submit Details
+                          Submit
                         </a>
                       </div>
                     </div>
@@ -141,8 +139,9 @@ const Home = () => {
               </form>
             </div>
           </div>
-          
         </div>
+        <WhatsappChat/>
+
       </section>
     </>
   );

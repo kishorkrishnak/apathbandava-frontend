@@ -2,13 +2,13 @@ import logo from "../assets/logo.png";
 
 const Header = () => {
   return (
-    <div className="fixed-top nav-wrapper">
+    <div className="nav-wrapper">
       <header>
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-dark">
             <a className="navbar-brand" href="/">
               <img src={logo} className="logo" alt="" />
-           AaapatBandhava
+              AapatBandhava
             </a>
             <button
               className="navbar-toggler"
