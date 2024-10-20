@@ -7,8 +7,8 @@ const Header = () => {
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light">
             <a className="navbar-brand" href="/">
-              <img src={logo} className="logo" alt="" />
-              ApatBandava
+              <img  src={logo} className="logo" alt="" />
+              ApathBandava
             </a>
             <button
               className="navbar-toggler"

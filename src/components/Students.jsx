@@ -1,93 +1,74 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Modal } from "react-responsive-modal";
-import "react-responsive-modal/styles.css";
 import SimpleImageSlider from "react-simple-image-slider";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
 import { uid } from "react-uid";
 import bank from "../assets/bank.jpg";
 import kapilaQr from "../assets/kapila-qr.png";
 import ThankYouMessage from "./ThankYou";
 
-const Patients = () => {
+const Students = () => {
   const [open, setOpen] = useState(false);
   const [showQr, setShowQr] = useState(false);
   const [donorName, setDonorName] = useState("");
   const [phone, setPhone] = useState("");
   const [amount, setAmount] = useState("");
   const [message, setMessage] = useState("");
-  const [patientIdToDonate, setPatientIdToDonate] = useState(null);
-  const [patientNameToDonate, setPatientNameToDonate] = useState("");
-  const [patients, setPatients] = useState([]);
-  const [displayCount, setDisplayCount] = useState(3); // State to track number of patients to display
+  const [studentIdToDonate, setStudentIdToDonate] = useState(null);
+  const [studentNameToDonate, setStudentNameToDonate] = useState("");
+  const [students, setStudents] = useState([]);
+  const [displayCount, setDisplayCount] = useState(3);
 
-  const onOpenModal = (patientName, patientId) => {
-    setPatientIdToDonate(patientId);
-    setPatientNameToDonate(patientName);
-    setOpen(true);
-  };
-
-  const onCloseModal = () => {
-    setShowQr(false);
-    setOpen(false);
-  };
-
-  const fetchPatients = async () => {
+  const fetchStudents = async () => {
     const response = await axios.get(
-      `${import.meta.env.VITE_BACKEND_URL}/api/patients`
+      `${import.meta.env.VITE_BACKEND_URL}/api/students`
     );
     if (response.data.status === "success") {
-      setPatients(response.data.data);
+      setStudents(response.data.data);
     }
   };
+
+  useEffect(() => {
+    fetchStudents();
+  }, []);
 
   const submitDonorInfoAndShowQr = async () => {
     const response = await axios.post(
       `${
         import.meta.env.VITE_BACKEND_URL
-      }/api/patients/${patientIdToDonate}/donate`,
+      }/api/students/${studentIdToDonate}/donate`,
       {
         name: donorName,
-        patient: patientIdToDonate,
+        student: studentIdToDonate,
         phone,
         amount,
         message,
       }
     );
-
     if (response.data.status === "success") {
       setShowQr(true);
     }
   };
 
-  useEffect(() => {
-    fetchPatients();
-  }, []);
-
-  const ImageSliderStyle = { width: "100%", height: "100%" };
-
-  const renderPatients = () => {
-    return patients.slice(0, displayCount).map((patient) => {
-      const images = patient.thumbnailImages.map((image) => {
-        return {
-          url: image,
-        };
-      });
+  const renderStudents = () => {
+    return students.slice(0, displayCount).map((student) => {
+      const images = student.thumbnailImages.map((image) => ({ url: image }));
       const progressPercentage = Math.min(
-        (patient.amountRaised / patient.amountRequired) * 100,
+        (student.amountRaised / student.amountRequired) * 100,
         100
       );
+
       return (
-        <div key={uid(patient)} className="col-md-6 col-lg-4">
+        <div key={uid(student)} className="col-md-6 col-lg-4">
           <div
-            className="don-box"
             style={{
               height: "100%",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
             }}
+            className="don-box"
           >
             <div>
               <div
@@ -105,8 +86,8 @@ const Patients = () => {
                     bottom: "0",
                     borderRadius: 6,
                   }}
-                  width={ImageSliderStyle.width}
-                  height={ImageSliderStyle.height}
+                  width="100%"
+                  height="100%"
                   navStyle={2}
                   navSize={35}
                   navMargin={6}
@@ -116,8 +97,8 @@ const Patients = () => {
                   showNavs={true}
                 />
               </div>
-              <h4 className="mt-4">{patient.name}</h4>
-              <p>Condition: {patient.disease}</p>
+              <h4 className="mt-4">{student.name}</h4>
+              <p>Qualification: {student.qualification}</p>
               <p
                 style={{
                   fontWeight: 600,
@@ -127,11 +108,12 @@ const Patients = () => {
                   WebkitLineClamp: 3,
                 }}
               >
-                &quot;{patient.description}&quot;
+                "{student.description}"
               </p>
+
               <p>
-                <span className="raised">₹{patient.amountRaised}</span> Raised
-                out of ₹{patient.amountRequired}
+                <span className="raised">₹{student.amountRaised}</span> Raised
+                out of ₹{student.amountRequired}
               </p>
 
               <div className="progress-bar-container">
@@ -141,9 +123,12 @@ const Patients = () => {
                 />
               </div>
             </div>
+
             <button
               onClick={() => {
-                onOpenModal(patient.name, patient._id);
+                setStudentIdToDonate(student._id);
+                setStudentNameToDonate(student.name);
+                setOpen(true);
               }}
               className="btn2 mt-2"
             >
@@ -155,17 +140,13 @@ const Patients = () => {
     });
   };
 
-  const loadMorePatients = () => {
-    setDisplayCount((prevCount) => prevCount + 3); // Load 3 more patients
-  };
-
   return (
     <>
-      {patients.length > 0 && (
+      {students.length > 0 && (
         <section className="don-sec" id="donation">
           <div className="container flex">
             <div className="heading">
-              <h1 className="leftbar">Medical Fundraisers</h1>
+              <h1 className="leftbar">Educational Fundraisers</h1>
             </div>
 
             <Modal
@@ -173,10 +154,13 @@ const Patients = () => {
                 modal: "paymentModal",
               }}
               open={open}
-              onClose={onCloseModal}
+              onClose={() => {
+                setShowQr(false);
+                setOpen(false);
+              }}
               center
             >
-              <h4 className="mt-4">Donate to {patientNameToDonate}</h4>
+              <h4 className="mt-4">Donate to {studentNameToDonate}</h4>
 
               {showQr ? (
                 <>
@@ -189,18 +173,18 @@ const Patients = () => {
                     <TabPanel>
                       <div className="qr-wrapper mt-3">
                         <img className="qr-image" src={kapilaQr} alt="qr" />
-
                         <a
                           className="btn1 openupi-btn mt-2"
                           href="upi://pay?pa=9544090119@ybl&pn=Kapila Park Goshala&cu=INR"
                         >
                           Open UPI App
                         </a>
-                        <ThankYouMessage personName={patientNameToDonate} />
+                        <ThankYouMessage personName={studentNameToDonate} />
                       </div>
                     </TabPanel>
+
                     <TabPanel>
-                      <div className=" mt-3">
+                      <div className="mt-3">
                         <img
                           height={50}
                           className="mb-2"
@@ -216,7 +200,7 @@ const Patients = () => {
                                 Account Holder:{" "}
                                 <span className="account-details-value">
                                   Kishor Krishna
-                                </span>{" "}
+                                </span>
                               </p>
                             </li>
                             <li>
@@ -224,25 +208,23 @@ const Patients = () => {
                                 Bank Name:{" "}
                                 <span className="account-details-value">
                                   Bank Of Baroda
-                                </span>{" "}
+                                </span>
                               </p>
                             </li>
-
                             <li>
                               <p>
                                 Bank Branch:{" "}
                                 <span className="account-details-value">
                                   Puttur
-                                </span>{" "}
+                                </span>
                               </p>
                             </li>
-
                             <li>
                               <p>
                                 Account No:{" "}
                                 <span className="account-details-value">
                                   123456789
-                                </span>{" "}
+                                </span>
                               </p>
                             </li>
                             <li>
@@ -250,12 +232,12 @@ const Patients = () => {
                                 IFSC Code:{" "}
                                 <span className="account-details-value">
                                   IFSC1234
-                                </span>{" "}
+                                </span>
                               </p>
                             </li>
                           </ul>
                         </div>
-                        <ThankYouMessage personName={patientNameToDonate} />
+                        <ThankYouMessage personName={studentNameToDonate} />
                       </div>
                     </TabPanel>
                   </Tabs>
@@ -293,7 +275,7 @@ const Patients = () => {
                           <div className="form-group">
                             <textarea
                               className="form-control"
-                              rows="6"
+                              rows="60"
                               placeholder="Message (Optional)"
                               onChange={(e) => setMessage(e.target.value)}
                             ></textarea>
@@ -315,12 +297,12 @@ const Patients = () => {
               )}
             </Modal>
 
-            <div className="row">{renderPatients()}</div>
+            <div className="row">{renderStudents()}</div>
 
-            {displayCount < patients.length && (
+            {displayCount < students.length && (
               <p
                 className="text-center col-md-12 loadmore-btn mt-5"
-                onClick={loadMorePatients}
+                onClick={() => setDisplayCount((prev) => prev + 3)}
               >
                 Load More
               </p>
@@ -332,4 +314,4 @@ const Patients = () => {
   );
 };
 
-export default Patients;
+export default Students;

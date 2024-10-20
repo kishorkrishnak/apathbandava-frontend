@@ -1,7 +1,7 @@
 import facebook from "../assets/facebook.png";
 import gmail from "../assets/gmail.png";
 import instagram from "../assets/instagram.png";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo-white.jpg";
 import youtube from "../assets/youtube.png";
 
 const Footer = () => {
@@ -13,7 +13,7 @@ const Footer = () => {
             <div className="col-one">
               <a className="navbar-brand navbar-brand-white" href="/">
                 <img src={logo} className="logo footer-logo" alt="" />
-                ApatBandava
+                ApathBandava
               </a>
               <p className="mt-2">
                 Address : Mura, Puttur, Dakshina Kannada, Karnataka, 574220{" "}
@@ -23,8 +23,8 @@ const Footer = () => {
               </p>
               <p>
                 Email :{" "}
-                <a href="mailto:apatbandava@gmail.com">
-                apatbandava@gmail.com
+                <a href="mailto:apathbandava@gmail.com">
+                apathbandavafundraising@gmail.com
                 </a>
               </p>
             </div>
@@ -63,7 +63,7 @@ const Footer = () => {
                 <a href="#">
                   <img src={youtube} alt="youtube"></img>
                 </a>
-                <a href="mailto:apatbandava@gmail.com">
+                <a href="mailto:apathbandavafundraising@gmail.com">
                   <img src={gmail} alt="gmail"></img>
                 </a>
               </div>
