@@ -3,10 +3,13 @@ import Patients from "../components/Patients";
 import RequestCallback from "../components/RequestCallback";
 import Students from "../components/Students";
 import WhatWeOffer from "../components/WhatWeOffer";
+import hero from '../assets/hero.jpg'
 const Home = () => {
   return (
     <>
-      <section className="home-sec" id="home">
+      <section style={{
+        backgroundImage:`url('${hero}')`
+      }} className="home-sec" id="home">
         <div className="container">
           <div className="home-content">
             <div className="row">

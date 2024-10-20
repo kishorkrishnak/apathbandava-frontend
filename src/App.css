@@ -88,7 +88,6 @@
 
 .home-sec {
   position: relative;
-  background-image: url("hero.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -514,15 +513,6 @@ h2 {
 p {
   font-size: 1.2rem;
   margin-top: 20px;
-}
-
-.home-sec {
-  position: relative;
-  background-image: url("hero.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: 1;
 }
 
 .home-sec::before {
