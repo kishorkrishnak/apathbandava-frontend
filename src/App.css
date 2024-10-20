@@ -378,7 +378,7 @@ footer .social a img {
 
 @media (max-width: 551px) {
   .home-sec {
-    background-position: -550px 0px;
+    background-position: -600px 0px !important;
   }
 
   .metrics {

@@ -23,8 +23,8 @@ const Footer = () => {
               </p>
               <p>
                 Email :{" "}
-                <a href="mailto:apathbandava@gmail.com">
-                apathbandavafundraising@gmail.com
+                <a href="mailto:apathbandavafundraising@gmail.com">
+                  apathbandavafundraising@gmail.com
                 </a>
               </p>
             </div>
