@@ -156,7 +156,7 @@ const Patients = () => {
   };
 
   const loadMorePatients = () => {
-    setDisplayCount((prevCount) => prevCount + 3); // Load 3 more patients
+    setDisplayCount((prevCount) => prevCount + 3);
   };
 
   return (
@@ -165,7 +165,7 @@ const Patients = () => {
         <section className="don-sec" id="donation">
           <div className="container flex">
             <div className="heading">
-              <h1 className="leftbar">Medical Fundraisers</h1>
+              <h1 className="leftbar">Active Fundraisers</h1>
             </div>
 
             <Modal
@@ -315,7 +315,7 @@ const Patients = () => {
               )}
             </Modal>
 
-            <div className="row">{renderPatients()}</div>
+            <div className="row row-gap-4">{renderPatients()}</div>
 
             {displayCount < patients.length && (
               <p

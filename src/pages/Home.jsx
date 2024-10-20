@@ -1,15 +1,18 @@
 import cow from "../assets/help-2.png";
+import hero from "../assets/hero.jpg";
 import Patients from "../components/Patients";
 import RequestCallback from "../components/RequestCallback";
-import Students from "../components/Students";
 import WhatWeOffer from "../components/WhatWeOffer";
-import hero from '../assets/hero.jpg'
 const Home = () => {
   return (
     <>
-      <section style={{
-        backgroundImage:`url('${hero}')`
-      }} className="home-sec" id="home">
+      <section
+        style={{
+          backgroundImage: `url('${hero}')`,
+        }}
+        className="home-sec"
+        id="home"
+      >
         <div className="container">
           <div className="home-content">
             <div className="row">
@@ -24,28 +27,27 @@ const Home = () => {
                     Make a difference today: donate to people and save a soul!
                   </p>
 
-                  {/* Metrics Section */}
-                  <div className="metrics">
-                    <div className="metric-item">
-                      <h3>0%</h3>
-                      <p>Platform Fees</p>
-                    </div>
-                    <div className="metric-item">
-                      <h3>24/7</h3>
-                      <p>Support</p>
-                    </div>
-                    <div className="metric-item">
-                      <h3>100%</h3>
-                      <p>Impact</p>
-                    </div>
-                  </div>
-
-                  <a
-                    href="#donation"
-                    className="btn1 btn-donate-hero  py-3 px-4"
+                  <div
+                  className="hero-buttons"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 10,
+                    }}
                   >
-                    Donate or Start a Fundraiser Now!
-                  </a>
+                    <a
+                      href="#donation"
+                      className="btn1 btn-donate-hero py-3 px-4"
+                    >
+                      Donate
+                    </a>
+                    <a
+                      href="#contact"
+                      className="btn1 btn-donate-hero  py-3 px-4"
+                    >
+                      Start a Fundraiser
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -81,7 +83,7 @@ const Home = () => {
       </section>
 
       <Patients />
-      <Students />
+      {/* <Students /> */}
 
       <WhatWeOffer />
       <RequestCallback />

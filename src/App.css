@@ -7,7 +7,9 @@
   font-family: "Inter", sans-serif;
   scroll-behavior: smooth;
 }
-
+.hero-buttons {
+  justify-content: start;
+}
 .logo {
   height: 45px;
   margin-right: 10px;
@@ -20,7 +22,6 @@
 .heading h1 {
   font-size: 28px;
   font-weight: 500;
-
   margin-bottom: 15px;
 }
 
@@ -164,11 +165,6 @@ nav {
   margin-left: 15px;
 }
 
-.home-sec .home-content h1 {
-  font-size: 2.3rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
 .home-sec .home-content h2 span {
   color: #14e20d;
 }
@@ -180,6 +176,7 @@ nav {
 }
 .home-sec .home-content p {
   font-size: 1.3rem;
+  margin-bottom: 25px;
 }
 
 .home-sec .home-content {
@@ -187,7 +184,6 @@ nav {
   padding: 120px 0;
 }
 
-/* About section */
 .about-sec {
   padding: 100px 0;
   background-color: #e6edff;
@@ -347,7 +343,7 @@ footer .social a img {
 
 @media (max-width: 991px) {
   .home-sec .home-content {
-    padding: 50px 0;
+    padding: 60px 0;
   }
   .cont-sec p,
   .cont-sec .social {
@@ -359,8 +355,10 @@ footer .social a img {
   }
 }
 @media (max-width: 611px) {
+  .hero-buttons {
+    justify-content: center;
+  }
   .btn-donate-hero {
-    width: 100%;
     display: flex !important;
     align-items: center;
     justify-content: center;
@@ -376,10 +374,6 @@ footer .social a img {
 }
 
 @media (max-width: 551px) {
-  .home-sec {
-    background-position: -600px 0px !important;
-  }
-
   .metrics {
     justify-content: center;
     align-items: center;
@@ -455,12 +449,12 @@ footer .social a img {
 }
 
 .offer-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin-bottom: 10px;
 }
 
 .offer-card p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #555;
 }
 
@@ -511,7 +505,7 @@ h2 {
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-top: 20px;
 }
 
@@ -534,15 +528,10 @@ p {
 }
 
 .home-sec .home-content h1 {
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   line-height: 1.2;
-}
-
-.home-sec .home-content p {
-  font-size: 1rem;
-  line-height: 1.5;
 }
 
 .metrics {
@@ -597,6 +586,7 @@ p {
   }
 
   .home-sec .home-content p {
+    margin-bottom: 30px;
     font-size: 1rem;
   }
 

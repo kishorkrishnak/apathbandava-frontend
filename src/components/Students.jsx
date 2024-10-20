@@ -297,7 +297,7 @@ const Students = () => {
               )}
             </Modal>
 
-            <div className="row">{renderStudents()}</div>
+            <div className="row row-gap-4">{renderStudents()}</div>
 
             {displayCount < students.length && (
               <p
