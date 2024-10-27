@@ -1,0 +1,244 @@
+.loadmore-btn {
+    color: rgb(115, 103, 228);
+    cursor: pointer;
+  }
+  
+  .progress-bar-container {
+    width: 100%;
+    background-color: #e0e0e0; 
+    border-radius: 5px;
+    margin: 10px 0;
+  }
+  
+  .progress-bar-container .progress-bar {
+    height: 10px;
+    background-color: #00bf62;
+    border-radius: 5px;
+  }
+  
+  .patients-section {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .section-heading h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+  }
+  
+  .section-heading h1:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #1878CF;
+  }
+  
+  .patients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .patient-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+  
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .patients-section .patient-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .patients-section .image-slider {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .patients-section .slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .slider-btn:hover {
+    background: white;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  
+  .days-left {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #ff6b6b;
+  }
+  
+  .calendar-icon {
+    font-size: 1rem;
+  }
+  
+  .patient-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .patient-name {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .condition {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+  }
+  
+  .heart-icon {
+    color: #ff6b6b;
+  }
+  
+  .description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .funding-info {
+    margin-bottom: 1rem;
+  }
+  
+  .amount-info {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .raised {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2ecc71;
+  }
+  
+  .total {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .progress-container {
+    width: 100%;
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(to right, #2ecc71, #27ae60);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+  }
+  
+  .donate-button {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    background: #00bf62;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s ease;
+  }
+  
+  .donate-button:hover {
+    background: #1976d2;
+  }
+  
+  .load-more-button {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 0.8rem 2rem;
+    background: transparent;
+    border: 2px solid #ff6b6b;
+    color: #ff6b6b;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .load-more-button:hover {
+    background: #ff6b6b;
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .patients-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .section-heading h1 {
+      font-size: 2rem;
+    }
+  }
+  

@@ -1,5 +1,6 @@
-import cow from "../assets/help-2.png";
-import './About.css'
+import cow from "../assets/help.png";
+import "./About.css";
+
 const About = () => {
   return (
     <section className="about-sec" id="about">
