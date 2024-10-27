@@ -3,11 +3,11 @@ import Header from "./Header";
 
 const PageLayout = ({ children }) => {
   return (
-    <div className="App">
+    <main className="App">
       <Header />
       {children}
       <Footer />
-    </div>
+    </main>
   );
 };
 

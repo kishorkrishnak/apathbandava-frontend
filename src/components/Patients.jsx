@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
+import { Link } from "react-router-dom";
 import SimpleImageSlider from "react-simple-image-slider";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
@@ -141,14 +142,15 @@ const Patients = () => {
                 />
               </div>
             </div>
-            <button
-              onClick={() => {
-                onOpenModal(patient.name, patient._id);
-              }}
+            <Link
+              to={`/patient/${patient._id}`}
+              // onClick={() => {
+              //   onOpenModal(patient.name, patient._id);
+              // }}
               className="btn2 mt-2"
             >
               Donate Now
-            </button>
+            </Link>
           </div>
         </div>
       );
