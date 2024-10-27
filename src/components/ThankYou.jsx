@@ -1,8 +1,8 @@
 const handleDownloadCertificate = () => {
-  const certificateUrl = "/path/to/static/pdf/certificate.pdf";
+  const certificateUrl = "/cert.jpg";
   const link = document.createElement("a");
   link.href = certificateUrl;
-  link.setAttribute("download", "Donation_Certificate.pdf");
+  link.setAttribute("download", "Donation_Certificate.jpg");
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);

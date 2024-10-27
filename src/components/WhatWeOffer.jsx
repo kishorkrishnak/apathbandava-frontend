@@ -1,5 +1,6 @@
 import { BsQrCodeScan } from "react-icons/bs";
-import { FaHandshake, FaWallet } from "react-icons/fa"; // Wallet icon for Platform Free
+import { FaHandshake, FaWallet, FaWhatsapp } from "react-icons/fa"; // Wallet icon for Platform Free
+import "./WhatWeOffer.css";
 const WhatWeOffer = () => {
   return (
     <section className="offer-section" id="offer">
@@ -44,6 +45,16 @@ const WhatWeOffer = () => {
               </p>
             </div>
           </div>
+
+          <a
+            href="https://api.whatsapp.com/send?phone=+919380770883&text=Hello"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn1 mt-2 whatsapp"
+          >
+            <FaWhatsapp className="btn-icon" />
+            Chat On Whatsapp
+          </a>
         </div>
       </div>
     </section>

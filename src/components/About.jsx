@@ -23,6 +23,11 @@ const About = () => {
               financial burden of medical and educational expenses and ensure
               that every human receives the care they deserve.
             </p>
+            <div className="col-md-12 mt-2">
+              <a href="#contact" className="btn1">
+                Start Fundraiser
+              </a>
+            </div>
           </div>
         </div>
       </div>
