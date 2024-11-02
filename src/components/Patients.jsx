@@ -5,13 +5,16 @@ import {
   FaChevronLeft,
   FaChevronRight,
   FaHeart,
+  FaShare,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./Patients.css";
+
 const Patients = () => {
   const [patients, setPatients] = useState([]);
   const [displayCount, setDisplayCount] = useState(3);
   const [currentImageIndexes, setCurrentImageIndexes] = useState({});
+  const [showShareAlert, setShowShareAlert] = useState(false);
 
   const fetchPatients = async () => {
     const response = await axios.get(
@@ -43,6 +46,54 @@ const Patients = () => {
       ...prev,
       [patientId]: (prev[patientId] - 1 + maxLength) % maxLength,
     }));
+  };
+
+  const handleShare = async (patient) => {
+    const shareUrl = `${window.location.origin}/patient/${patient._id}`;
+    const shareText = `Help ${patient.name} fight ${
+      patient.disease
+    }. ₹${patient.amountRaised.toLocaleString()} raised of ₹${patient.amountRequired.toLocaleString()} required.`;
+    const shareTitle = `Support ${patient.name}'s Medical Fundraiser`;
+
+    // Get the current image being displayed for this patient
+    const currentImage =
+      patient.thumbnailImages[currentImageIndexes[patient._id]];
+
+    try {
+      if (navigator.share) {
+        // Check if the browser supports sharing files
+        if (navigator.canShare && navigator.canShare({ files: [] })) {
+          // Fetch the image and convert it to a file
+          const response = await fetch(currentImage);
+          const blob = await response.blob();
+          const file = new File([blob], "patient-image.jpg", {
+            type: "image/jpeg",
+          });
+
+          // Share with image
+          await navigator.share({
+            title: shareTitle,
+            text: shareText,
+            url: shareUrl,
+            files: [file],
+          });
+        } else {
+          await navigator.share({
+            title: shareTitle,
+            text: shareText,
+            url: shareUrl,
+          });
+        }
+      } else {
+        await navigator.clipboard.writeText(
+          `${shareTitle}\n\n${shareText}\n\n${shareUrl}`
+        );
+        setShowShareAlert(true);
+        setTimeout(() => setShowShareAlert(false), 3000);
+      }
+    } catch (error) {
+      console.error("Error sharing:", error);
+    }
   };
 
   const renderPatients = () => {
@@ -85,12 +136,24 @@ const Patients = () => {
           </div>
 
           <div className="patient-info">
-            <h3 className="patient-name">{patient.name}</h3>
+            <div className="patient-header">
+              <h3 className="patient-name">{patient.name}</h3>
+              <button
+                onClick={() => handleShare(patient)}
+                className="share-button"
+                aria-label="Share fundraiser"
+              >
+                <FaShare />
+              </button>
+            </div>
             <div className="condition">
               <FaHeart className="heart-icon" />
               <span>{patient.disease}</span>
             </div>
-            <p className="description"><strong>"</strong>{patient.description}</p>
+            <p className="description">
+              <strong>"</strong>
+              {patient.description}
+            </p>
 
             <div className="funding-info">
               <div className="amount-info">
@@ -124,6 +187,12 @@ const Patients = () => {
 
   return (
     <section id="patients-section" className="patients-section">
+      {showShareAlert && (
+        <div className="share-alert">
+          Fundraiser link copied to clipboard! You can now share it with others.
+        </div>
+      )}
+
       {patients.length > 0 && (
         <div className="container">
           <div className="section-heading">
